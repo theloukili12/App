@@ -12,7 +12,7 @@
     <?php 
     include "db/db_conn.php";
     $cin = $_SESSION['cin'];
-    $sql = "SELECT bonus.* 
+    $sql = "SELECT DATE_FORMAT(bonus.date , '%d %M %Y') as 'date',bonus.somme,bonus.raison
     FROM bonus WHERE Personne LIKE '$cin'";
 
     $sql1 = "select IFNULL(SUM(bonus.somme),0) as 'summ'
@@ -25,9 +25,9 @@
     $row = mysqli_fetch_assoc($result);
     while( $row1 = mysqli_fetch_assoc($result1)){?>
         <tbody>  
-            <td><?php echo $row1['date']; ?> DH</td>
+            <td><?php echo $row1['date']; ?> </td>
             <td><?php echo $row1['somme'];?> DH</td>
-            <td><?php echo $row1['raison'];?> DH</td>
+            <td><?php echo $row1['raison'];?></td>
         </tbody>
         <?php } } ?>
     <tfoot>

@@ -13,6 +13,11 @@ if(isset( $_POST['email']) && isset( $_POST['cin'])){
 
 		if (mysqli_num_rows($result) == 1) {
 
+            // Intisialiser le nombre de jours de congé à 30 chaque debut d'annee
+            
+            $sql1 = "UPDATE Personne SET Personne.nbrj_conge = 30 WHERE day(NOW()) = 1 and Month(NOW()) = 1";
+            $result1 = mysqli_query($conn, $sql1);
+
 			$row = mysqli_fetch_assoc($result);
             
             if(isset( $_POST['email']) && isset( $_POST['cin'])){
@@ -34,8 +39,4 @@ if(isset( $_POST['email']) && isset( $_POST['cin'])){
 	        exit();
 		
 	    }
-        function phpAlert($msg)
-        {
-            echo '<script type="text/javascript">alert("' . $msg . '")</script>';
-        }
 }
