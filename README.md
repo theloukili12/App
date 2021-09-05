@@ -2,15 +2,15 @@
 A web application to manage the company Tyssere+partner based in Rabat in the personal space where employees can see all their information and also request leave to see their bonuses and various other features.
 # The technology used
 - Backend : 
-    PHP 7.0
-    AJAX
+    1. PHP 7.0
+    2. AJAX
 - FRONTEND :
-    boostrap
-    html5/css3
-    js
+    1. boostrap
+    2. html5/css3
+    3. js
 - DATABASE :
-    MYSQL
+    1. MYSQL
 - SERVER :
-    WAMP 
+    1. WAMP 
 - OTHER TOOLS :
-    GIT
+    1. GIT
