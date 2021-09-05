@@ -16,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+        <link rel="icon" type="image/png" href="img/Tisseyre-logo.png" />
+
 
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
