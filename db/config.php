@@ -7,7 +7,7 @@ if(isset( $_POST['email']) && isset( $_POST['cin'])){
 
         $email = $_POST['email'];
         $cin = $_POST['cin'];
-        $sql = "SELECT * FROM personne WHERE (email LIKE '$email') OR (Cin_personne LIKE '$cin')";
+        $sql = "SELECT * FROM personne WHERE (email LIKE '$email') AND (Cin_personne LIKE '$cin')";
 		echo $sql;
         $result = mysqli_query($conn, $sql);
 
