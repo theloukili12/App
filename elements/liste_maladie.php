@@ -11,9 +11,6 @@
     include "db/db_conn.php";
     $cin = $_SESSION['cin'];
     $sql = "Select c.*,DATEDIFF(c.date_fin,c.date_debut) as 'tag' FROM type_conge t , conges c where c.type_conge = t.Id_type_conge and t.type_conge LIKE 'malade' and c.status is NULL";
-
-
-
     $result = mysqli_query($conn, $sql);
     if($result){
         if (mysqli_num_rows($result) >= 1)   {

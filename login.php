@@ -1,10 +1,8 @@
-  
 <?php 
-
-session_start();
-unset($_SESSION['cin']);
-unset($_SESSION['nc']);
-$_SESSION['cin'] = null;
+    session_start();
+    unset($_SESSION['cin']);
+    unset($_SESSION['nc']);
+    $_SESSION['cin'] = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
