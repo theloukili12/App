@@ -17,7 +17,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="img/Tisseyre-logo.png" />
+    <link rel="shortcut icon" type="image/png" href="img/Tisseyre-logo.ico" />
 
 
     <!-- Custom fonts for this template-->

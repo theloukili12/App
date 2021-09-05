@@ -29,7 +29,7 @@
     <link href="css/style.css" rel="stylesheet">
 
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/Tisseyre-logo.png" />
+    <link rel="shortcut icon" type="image/png" href="img/Tisseyre-logo.ico" />
 
 </head>
 
