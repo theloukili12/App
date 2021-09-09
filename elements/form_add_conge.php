@@ -25,14 +25,14 @@
         <form  action="db/add_conge.php" method="POST">
 
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="type" value="1" id="flexRadioDefault1">
+                <input onchange="vacance();"  class="form-check-input" type="radio" name="type" value="1" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
                     Vacance 
                 </label>
                 </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="type" value="2" id="flexRadioDefault2" c>
+                <input onchange="malade();" class="form-check-input" type="radio" name="type" value="2" id="flexRadioDefault2" c>
                 <label class="form-check-label" for="flexRadioDefault2">
                     Malade
                 </label>
@@ -51,7 +51,8 @@
             <div class="inputfield">
                     <label>DATE DE FIN</label>
                     <input type="date" class="input" name="date_fin"  >
-            </div>  
+            </div> 
+            <span class="a"></span> 
 
             <button type="submit" class="btn btn-success btn-icon-split">
                 <span class="icon text-white-50">
@@ -62,3 +63,14 @@
         </form>
     </div>
 </div>	
+<script type="text/javascript">
+    function malade(){
+        document.querySelector('.a').innerHTML ="<div class='inputfield'><label>Justification</label><input type='file' class='input'   >        </div> ";
+
+    };
+    function vacance(){
+        document.querySelector('.a').innerHTML ="";
+    }
+
+
+</script>
