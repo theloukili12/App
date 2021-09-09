@@ -23,7 +23,6 @@ if(isset( $_POST['email']) && isset( $_POST['cin'])){
             if(isset( $_POST['email']) && isset( $_POST['cin'])){
                 if ($row['email'] == $email  || $row['cin_personne'] == $cin) {
                     $_SESSION['service'] = $row['service'];
-
                     $_SESSION['cin'] = $row['Cin_personne'];
                     $_SESSION['nc'] = $row['Nom_personne'] .' '. $row['Prenom_personne'];
                     //echo $_SESSION['nc'];

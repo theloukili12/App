@@ -2,6 +2,7 @@
     setlocale(LC_TIME, 'fra_fra');
     include "db/db_conn.php";
     session_start();
+    $_SESSION['message'] = "";
     if(!$_SESSION['cin']){
        header("location:login.php");
     }

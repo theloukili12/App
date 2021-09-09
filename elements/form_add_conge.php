@@ -10,6 +10,11 @@
 ?>
 
 <div class="wrapper">
+    <?php  if($_SESSION['message']){?>
+        <div class="alert alert-danger" role="alert">
+            <?php  echo $_SESSION['message'];?>
+        </div>    
+    <?php     }?>
     <div class="alert alert-info" role="alert">
         vous devez demander le congé après 7 jours à partir d'aujourd'hui
     </div>

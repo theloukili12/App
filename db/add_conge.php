@@ -16,32 +16,46 @@
     $date = dateDifference($date_fin,$date_debut);
     include "db_conn.php";
 
-    if ($type == 1) {             
-    $sql = "INSERT INTO `conges`(`date_debut`, `date_fin`, `Personne`, `type_conge`)  VALUES ('$date_debut','$date_fin','$cin',$type)";  
-    $result = mysqli_query($conn, $sql);
-    if ($result === true) {
-        $query = "UPDATE `personne` SET `nbrj_conge`=`nbrj_conge` - $date WHERE Cin_personne = 'CB318188'";
-        $rslt =  mysqli_query($conn,$query);
-        if ($rslt === true) 
-        {
-            header("Location: ../index.php");
-            exit();
-        }
-
+    $query = "SELECT nbrj_conge FROM personne Where Cin_personne = '$cin'";
+    $result_query = mysqli_query($conn, $query);
+    if ( $result_query) {
+        $row1 = mysqli_fetch_assoc($result_query);
+    }
+    if ($row1["nbrj_conge"] - $date >= 0 )
+    {
+        if ($type == 1) {             
+            $sql = "INSERT INTO `conges`(`date_debut`, `date_fin`, `Personne`, `type_conge`)  VALUES ('$date_debut','$date_fin','$cin',$type)";  
+            $result = mysqli_query($conn, $sql);
+            if ($result === true) {
+                $query = "UPDATE `personne` SET `nbrj_conge`=`nbrj_conge` - $date WHERE Cin_personne = '$cin'";
+                $rslt =  mysqli_query($conn,$query);
+                if ($rslt === true) 
+                {
+                    header("Location: ../index.php");
+                    exit();
+                }
+    
+            }else{
+                header("Location: ../login.php");
+                exit();
+            }
+            }else{
+                $sql = "INSERT INTO `conges`(`date_debut`, `date_fin`, `Personne`, `type_conge`)  VALUES ('$date_debut','$date_fin','$cin',$type)";  
+                $result = mysqli_query($conn, $sql);
+                if ($result === true) {
+                    header("Location: ../index.php");
+                    exit();    
+                }else{
+                    header("Location: ../login.php");
+                    exit();
+                }
+            };
     }else{
-        header("Location: ../login.php");
+        session_start();
+        $_SESSION['message'] = "Impossible !! Vous avez depassé le nombre de congés disponible.";
+        header("Location: ../demande_conge.php");
         exit();
     }
-    }else{
-        $sql = "INSERT INTO `conges`(`date_debut`, `date_fin`, `Personne`, `type_conge`)  VALUES ('$date_debut','$date_fin','$cin',$type)";  
-        $result = mysqli_query($conn, $sql);
-        if ($result === true) {
-            header("Location: ../index.php");
-            exit();    
-        }else{
-            header("Location: ../login.php");
-            exit();
-        }
-    };
+    
 
 ?>
