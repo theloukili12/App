@@ -65,7 +65,7 @@
 </div>	
 <script type="text/javascript">
     function malade(){
-        document.querySelector('.a').innerHTML ="<div class='inputfield'><label>Justification</label><input type='file' class='input'   >        </div> ";
+        document.querySelector('.a').innerHTML =" <div class='form-group'><label for='exampleFormControlTextarea1'>Raison:</label><textarea class='form-control' id='exampleFormControlTextarea1' rows='3'></textarea></div>";
 
     };
     function vacance(){
