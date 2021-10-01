@@ -2,6 +2,7 @@
     $date_debut = $_POST["date_dabut"];
     $date_fin = $_POST["date_fin"];
     $type = $_POST["type"];
+    $raison = $_POST["raison"];
     $cin = trim($_POST["cin"]);
     function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
     {
@@ -24,7 +25,7 @@
     if ($row1["nbrj_conge"] - $date >= 0 )
     {
         if ($type == 1) {             
-            $sql = "INSERT INTO `conges`(`date_debut`, `date_fin`, `Personne`, `type_conge`)  VALUES ('$date_debut','$date_fin','$cin',$type)";  
+            $sql = "INSERT INTO `conges`(`date_debut`, `date_fin`, `Personne`, `type_conge`)  VALUES ('$date_debut','$date_fin','$cin',1)";  
             $result = mysqli_query($conn, $sql);
             if ($result === true) {
                 $query = "UPDATE `personne` SET `nbrj_conge`=`nbrj_conge` - $date WHERE Cin_personne = '$cin'";
@@ -36,11 +37,11 @@
                 }
     
             }else{
-                header("Location: ../login.php");
+               echo $sql;
                 exit();
             }
             }else{
-                $sql = "INSERT INTO `conges`(`date_debut`, `date_fin`, `Personne`, `type_conge`)  VALUES ('$date_debut','$date_fin','$cin',$type)";  
+                $sql = "INSERT INTO `conges`(`date_debut`, `date_fin`, `Personne`, `type_conge`,raison)  VALUES ('$date_debut','$date_fin','$cin',$type,'$raison')";  
                 $result = mysqli_query($conn, $sql);
                 if ($result === true) {
                     header("Location: ../index.php");

@@ -1,4 +1,4 @@
-<h4>La list des bonus de ce mois courant :</h4>
+<h4>La list des bonus des mois precedents :</h4>
 <table class="table table-striped table-success">
       
     <thead>                                                             
@@ -14,10 +14,10 @@
     include "db/db_conn.php";
     $cin = $_SESSION['cin'];
     $sql = "SELECT DATE_FORMAT(bonus.date , '%d %M %Y') as 'date',bonus.somme,bonus.raison
-    FROM bonus WHERE Personne LIKE '$cin' and month(bonus.date) like month(now())";
+    FROM bonus WHERE Personne LIKE '$cin' and  month(now())- Month(bonus.date)  > 0";
 
     $sql1 = "select IFNULL(SUM(bonus.somme),0) as 'summ'
-    FROM bonus WHERE Personne LIKE '$cin' and month(bonus.date) like month(now())";
+    FROM bonus WHERE Personne LIKE '$cin' and  month(now())- Month(bonus.date)  > 0 ";
 
     $result = mysqli_query($conn, $sql1);
     $result1 = mysqli_query($conn, $sql);

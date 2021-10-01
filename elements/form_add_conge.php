@@ -29,7 +29,7 @@
                 <label class="form-check-label" for="flexRadioDefault1">
                     Vacance 
                 </label>
-                </div>
+            </div>
 
             <div class="form-check">
                 <input onchange="malade();" class="form-check-input" type="radio" name="type" value="2" id="flexRadioDefault2" c>
@@ -50,7 +50,7 @@
 
             <div class="inputfield">
                     <label>DATE DE FIN</label>
-                    <input type="date" class="input" name="date_fin"  >
+                    <input type="date" class="input" name="date_fin" required>
             </div> 
             <span class="a"></span> 
 
@@ -65,7 +65,7 @@
 </div>	
 <script type="text/javascript">
     function malade(){
-        document.querySelector('.a').innerHTML =" <div class='form-group'><label for='exampleFormControlTextarea1'>Raison:</label><textarea class='form-control' id='exampleFormControlTextarea1' rows='3'></textarea></div>";
+        document.querySelector('.a').innerHTML =" <div class='form-group'><label for='exampleFormControlTextarea1'>Raison:</label><textarea class='form-control' id='exampleFormControlTextarea1' rows='3' name='raison'></textarea></div>";
 
     };
     function vacance(){

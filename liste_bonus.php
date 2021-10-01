@@ -63,6 +63,7 @@
                     <!-- Content Row -->
                     <?php include_once 'elements/liste_bonus.php'; ?>
 
+                    <?php include_once 'elements/liste_bonus_his.php'; ?>
                     
                 </div>
                 <!-- /.container-fluid -->
